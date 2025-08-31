@@ -582,3 +582,91 @@
 .encounter-difficulty-summary strong {
   color: #007bff;
 }
+
+.navigate-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  margin-left: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.navigate-button:hover {
+  background-color: #0056b3;
+}
+
+.map-select-and-button,
+.encounter-select-and-button {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust as needed for spacing between select and button */
+}
+
+.add-to-journal-btn,
+.combat-action-btn {
+  background-color: #6c757d; /* A neutral gray */
+  color: white;
+  border: 1px solid #5a6268; /* Slightly darker border */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Smooth transition */
+}
+
+.add-to-journal-btn:hover,
+.combat-action-btn:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+  border-color: #4e555b;
+}
+
+/* Specific colors for start, retreat, won for subtle differentiation */
+.start-combat-btn {
+  background-color: #28a745; /* Green for start */
+  border-color: #218838;
+}
+
+.start-combat-btn:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.retreat-combat-btn {
+  background-color: #ffc107; /* Yellow for retreat */
+  color: #333; /* Darker text for contrast on yellow */
+  border-color: #e0a800;
+}
+
+.retreat-combat-btn:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+.combat-won-btn {
+  background-color: #007bff; /* Blue for won */
+  border-color: #0069d9;
+}
+
+.combat-won-btn:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}
+
+.combat-actions-container {
+  display: flex;
+  flex-direction: row; /* Arrange items in a row */
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  gap: 10px; /* Add some space between buttons */
+  margin-top: 20px;
+}
+
+.player-view-preview p {
+  color: #333; /* Ensure text is dark for readability on light background */
+}
+
+.combat-button-size {
+  padding: 5px 10px;
+  font-size: 0.75em;
+}

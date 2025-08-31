@@ -14,7 +14,7 @@ function CampaignSelection() {
 
   const handleSelectCampaign = (campaign) => {
     setCurrentCampaign(campaign);
-    navigate('/maps'); // Navigate to a default page after selection
+    navigate('/combat'); // Navigate to a default page after selection
   };
 
   const handleAddNewCampaign = () => {

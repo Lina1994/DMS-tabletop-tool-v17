@@ -30,6 +30,8 @@ function Shops() {
   const [isImporting, setIsImporting] = useState(false);
   const [isExporting, setIsExporting] = useState(false);
   const [searchTerm, setSearchTerm] = useState(''); // New state for search term
+  const [showControls, setShowControls] = useState(false); // New state for showing/hiding controls
+  const [collapsedSections, setCollapsedSections] = useState({}); // New state for collapsed sections
 
   // State for Shop CRUD
   const [isShopModalOpen, setIsShopModalOpen] = useState(false);
@@ -353,18 +355,35 @@ function Shops() {
       }))
     : [];
 
+  const toggleSection = (categoryId) => {
+    setCollapsedSections(prevState => ({
+      ...prevState,
+      [categoryId]: !prevState[categoryId]
+    }));
+  };
+
   return (
     <div className="shops-container">
-      <h2>Tiendas</h2>
+      <div className="shops-header">
+        <h2>Tiendas</h2>
+        <button className="toggle-controls-btn" onClick={() => setShowControls(!showControls)}>
+          {showControls ? 'Ocultar Controles' : 'Mostrar Controles'}
+        </button>
+      </div>
+
       <div className="shops-controls">
         <select onChange={(e) => setSelectedShopId(e.target.value)} value={selectedShopId || ''}>
           {shops.map(shop => (
             <option key={shop.id} value={shop.id}>{shop.name}</option>
           ))}
         </select>
-        <button onClick={() => handleOpenShopModal()}>Añadir Tienda</button>
-        <button onClick={() => handleOpenShopModal(selectedShop)} disabled={!selectedShopId}>Editar Tienda</button>
-        <button onClick={() => handleDeleteShopRequest(selectedShopId, selectedShop?.name)} disabled={!selectedShopId}>Eliminar Tienda</button>
+        {showControls && (
+          <>
+            <button onClick={() => handleOpenShopModal()}>Añadir Tienda</button>
+            <button onClick={() => handleOpenShopModal(selectedShop)} disabled={!selectedShopId}>Editar Tienda</button>
+            <button onClick={() => handleDeleteShopRequest(selectedShopId, selectedShop?.name)} disabled={!selectedShopId}>Eliminar Tienda</button>
+          </>
+        )}
       </div>
 
       {/* New Search Input */}
@@ -380,45 +399,68 @@ function Shops() {
       {selectedShop && (
         <div className="shop-details">
           <h3>{selectedShop.name}</h3>
-          <button onClick={() => handleOpenSectionModal()} disabled={!selectedShopId}>Añadir Sección</button>
+          {showControls && (
+            <button onClick={() => handleOpenSectionModal()} disabled={!selectedShopId}>Añadir Sección</button>
+          )}
           {filteredItems.map(category => (
             <div key={category.id} className="category-section">
-              <h4>{category.name}
-                <button onClick={() => handleOpenSectionModal(category)}>Editar</button>
-                <button onClick={() => handleDeleteSectionRequest(category.id, category.name)}>Eliminar</button>
+              <h4>
+                {category.name}
+                <button 
+                  className="toggle-section-btn"
+                  onClick={() => toggleSection(category.id)}
+                >
+                  {collapsedSections[category.id] ? '\u25BC' : '\u25B2'}
+                </button>
+                {showControls && (
+                  <>
+                    <button onClick={() => handleOpenSectionModal(category)}>Editar</button>
+                    <button onClick={() => handleDeleteSectionRequest(category.id, category.name)}>Eliminar</button>
+                  </>
+                )}
               </h4>
-              <div className="category-controls">
-                <button onClick={() => handleImportItems(category.id)} disabled={isImporting}>
-                  {isImporting ? 'Importando...' : `Importar ${category.name}`}
-                </button>
-                <button onClick={() => handleExportItems(category)} disabled={isExporting}>
-                  {isExporting ? 'Exportando...' : `Exportar ${category.name}`}
-                </button>
-              </div>
-              <table className="item-table">
-                <thead>
-                  <tr>
-                    {category.columns && category.columns.map(col => (
-                      <th key={col.name}>{col.name}</th>
-                    ))}
-                    <th>Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {category.items.map(item => (
-                    <tr key={item.id}>
-                      {category.columns && category.columns.map(col => (
-                        <td key={col.name}>{item[col.name]}</td>
+              {!collapsedSections[category.id] && (
+                <>
+                  {showControls && (
+                    <div className="category-controls">
+                      <button onClick={() => handleImportItems(category.id)} disabled={isImporting}>
+                        {isImporting ? 'Importando...' : `Importar ${category.name}`}
+                      </button>
+                      <button onClick={() => handleExportItems(category)} disabled={isExporting}>
+                        {isExporting ? 'Exportando...' : `Exportar ${category.name}`}
+                      </button>
+                    </div>
+                  )}
+                  <table className="item-table">
+                    <thead>
+                      <tr>
+                        {category.columns && category.columns.map(col => (
+                          <th key={col.name}>{col.name}</th>
+                        ))}
+                        {showControls && <th>Acciones</th>}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {category.items.map(item => (
+                        <tr key={item.id}>
+                          {category.columns && category.columns.map(col => (
+                            <td key={col.name}>{item[col.name]}</td>
+                          ))}
+                          {showControls && (
+                            <td>
+                              <button onClick={() => handleOpenModal(item, category)}>Editar</button>
+                              <button onClick={() => handleDeleteItem(item, category)}>Eliminar</button>
+                            </td>
+                          )}
+                        </tr>
                       ))}
-                      <td>
-                        <button onClick={() => handleOpenModal(item, category)}>Editar</button>
-                        <button onClick={() => handleDeleteItem(item, category)}>Eliminar</button>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              <button className="add-item-btn" onClick={() => handleOpenModal(null, category)}>Añadir {category.name.slice(0, -1)}</button>
+                    </tbody>
+                  </table>
+                  {showControls && (
+                    <button className="add-item-btn" onClick={() => handleOpenModal(null, category)}>Añadir {category.name.slice(0, -1)}</button>
+                  )}
+                </>
+              )}
             </div>
           ))}
         </div>

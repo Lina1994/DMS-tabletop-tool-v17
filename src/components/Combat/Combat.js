@@ -1324,23 +1324,29 @@ function Combat() {
 
       <div className="selection-container">
         <div className="map-selection-container">
-          <label htmlFor="map-select" onClick={handleNavigateToMaps}>Select Map:</label>
-          <select id="map-select" value={selectedMapId} onChange={handleMapSelect}>
-            <option value="">-- Select a map --</option>
-            {maps.map(map => (
-              <option key={map.id} value={map.id}>{map.name}</option>
-            ))}
-          </select>
+          <h3>Select Map:</h3>
+          <div className="map-select-and-button">
+            <select id="map-select" value={selectedMapId} onChange={handleMapSelect}>
+              <option value="">-- Select a map --</option>
+              {maps.map(map => (
+                <option key={map.id} value={map.id}>{map.name}</option>
+              ))}
+            </select>
+            <button onClick={handleNavigateToMaps} className="navigate-button">Go to Maps</button>
+          </div>
         </div>
 
         <div className="encounter-selection-container">
-          <label htmlFor="encounter-select" onClick={handleNavigateToEncounters}>Select Encounter:</label>
-          <select id="encounter-select" value={selectedEncounterId} onChange={handleEncounterSelect}>
-            <option value="">-- Select an encounter --</option>
-            {encounters.map(enc => (
-              <option key={enc.id} value={enc.id}>{enc.name}</option>
-            ))}
-          </select>
+          <h3>Select Encounter:</h3>
+          <div className="encounter-select-and-button">
+            <select id="encounter-select" value={selectedEncounterId} onChange={handleEncounterSelect}>
+              <option value="">-- Select an encounter --</option>
+              {encounters.map(enc => (
+                <option key={enc.id} value={enc.id}>{enc.name}</option>
+              ))}
+            </select>
+            <button onClick={handleNavigateToEncounters} className="navigate-button">Go to Encounters</button>
+          </div>
         </div>
 
         <div className="song-priority-container">
@@ -1368,26 +1374,7 @@ function Combat() {
 
         <button onClick={handleBattleTheme} className="battle-theme-btn">Batletheme</button>
 
-        {selectedEncounterDetails && currentPreviewMap && selectedDay && currentCampaign && (
-          <button
-            onClick={handleAddToJournal}
-            className="add-to-journal-btn"
-          >
-            Añadir a Diario
-          </button>
-        )}
-
-        <div className="combat-actions-container">
-          <button onClick={handleStartCombat} className="combat-action-btn start-combat-btn">
-            Inicio Combate
-          </button>
-          <button onClick={handleRetreatCombat} className="combat-action-btn retreat-combat-btn">
-            Retirada de Combate
-          </button>
-          <button onClick={handleCombatWon} className="combat-action-btn combat-won-btn">
-            Combate Ganado
-          </button>
-        </div>
+        
       </div>
 
       <div className={`player-view-preview ${isPreviewExpanded ? 'expanded' : ''}`}>
@@ -1567,6 +1554,27 @@ function Combat() {
               )}
             </>
           )}
+        </div>
+      )}
+      {selectedEncounterDetails && (
+        <div className="combat-actions-container">
+          {selectedEncounterDetails && currentPreviewMap && selectedDay && currentCampaign && (
+            <button
+              onClick={handleAddToJournal}
+              className="add-to-journal-btn"
+            >
+              Añadir a Diario
+            </button>
+          )}
+          <button onClick={handleStartCombat} className="combat-action-btn start-combat-btn combat-button-size">
+            Inicio Combate
+          </button>
+          <button onClick={handleRetreatCombat} className="combat-action-btn retreat-combat-btn combat-button-size">
+            Retirada de Combate
+          </button>
+          <button onClick={handleCombatWon} className="combat-action-btn combat-won-btn combat-button-size">
+            Combate Ganado
+          </button>
         </div>
       )}
 {selectedEncounterDetails && (
