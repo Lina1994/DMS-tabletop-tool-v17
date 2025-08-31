@@ -1,0 +1,46 @@
+.confirm-modal {
+  width: auto;
+  max-width: 400px;
+  text-align: center;
+}
+
+.confirm-modal p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Dark mode styles for the modal */
+body.dark .confirm-modal {
+  background-color: #333; /* Dark background for the modal */
+  color: #f0f0f0; /* Light text color */
+}
+
+body.dark .confirm-modal p {
+  color: #f0f0f0; /* Ensure paragraph text is also light */
+}
+
+.confirm-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  color: white;
+}
+
+.confirm-btn {
+  background-color: #dc3545; /* Rojo para confirmar la eliminación */
+}
+
+.confirm-btn:hover {
+  background-color: #c82333;
+}
+
+.cancel-btn {
+  background-color: #6c757d; /* Gris para cancelar */
+}
+
+.cancel-btn:hover {
+  background-color: #5a6268;
+}

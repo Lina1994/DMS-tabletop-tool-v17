@@ -1,0 +1,164 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: var(--background-color-light); /* Use theme variable */
+  padding: 25px; /* Slightly less padding */
+  border-radius: 5px; /* Sharper corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  width: 90%;
+  max-width: 750px; /* Wider for more content */
+  max-height: 95vh; /* Allow more height */
+  overflow-y: auto;
+  color: var(--text-color-light); /* Use theme variable */
+  border: 2px solid var(--border-color); /* Stronger border */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; /* Revert to system font */
+}
+
+.modal-content h2 {
+  color: var(--primary-color); /* Use theme variable */
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 2em;
+  text-shadow: none; /* Remove text shadow */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color-light); /* Use theme variable */
+  text-transform: uppercase; /* Uppercase labels */
+  font-size: 0.9em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="url"],
+.form-group textarea,
+.form-group select {
+  width: calc(100% - 22px); /* Adjust for border */
+  padding: 8px 10px; /* Slightly less padding */
+  border: 1px solid var(--border-color); /* Use theme variable */
+  border-radius: 3px;
+  background-color: var(--input-background-color); /* Use theme variable */
+  color: var(--text-color-light); /* Use theme variable */
+  font-size: 1em;
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form-group input[type="file"] {
+  padding: 5px 0;
+}
+
+.form-group-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.form-group-inline label {
+  flex: 0 0 auto;
+  align-self: center;
+  margin-right: 5px;
+  color: var(--text-color-light); /* Use theme variable */
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+
+.form-group-inline input[type="number"],
+.form-group-inline input[type="text"] {
+  flex: 1 1 80px; /* Allow inputs to grow but have a minimum width */
+  min-width: 80px;
+  max-width: 120px;
+  padding: 5px 8px; /* Smaller padding for inline inputs */
+}
+
+fieldset {
+  border: 2px solid var(--border-color); /* Use theme variable */
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: var(--card-background-color); /* Use theme variable */
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+fieldset legend {
+  font-weight: bold;
+  color: var(--primary-color); /* Use theme variable */
+  padding: 0 10px;
+  margin-left: -10px;
+  font-size: 1.1em;
+  text-shadow: none; /* Remove text shadow */
+  text-transform: uppercase;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  margin-right: 10px;
+  width: auto;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none; /* Remove explicit border */
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  color: white;
+  text-shadow: none; /* Remove text shadow */
+}
+
+.modal-actions button[type="submit"] {
+  background-color: var(--primary-color); /* Use theme variable */
+}
+
+.modal-actions button[type="submit"]:hover {
+  background-color: var(--primary-color-dark); /* Use theme variable */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions button[type="button"] {
+  background-color: var(--secondary-color); /* Use theme variable */
+  color: white; /* Ensure text is white */
+}
+
+.modal-actions button[type="button"]:hover {
+  background-color: var(--secondary-color-dark); /* Use theme variable */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}

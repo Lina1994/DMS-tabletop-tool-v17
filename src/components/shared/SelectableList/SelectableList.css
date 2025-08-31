@@ -1,0 +1,34 @@
+.selectable-list-container {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  background-color: #fff;
+  padding: 5px;
+}
+
+.selectable-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.selectable-list-item {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  color: #333; /* Set text color to a dark grey */
+}
+
+.selectable-list-item:last-child {
+  border-bottom: none;
+}
+
+.selectable-list-item:hover {
+  background-color: #f0f0f0;
+}
+
+.selectable-list-item.selected {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}

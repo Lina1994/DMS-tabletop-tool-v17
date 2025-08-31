@@ -1,0 +1,26 @@
+/* src/components/Spells/SpellCard/SpellCard.css */
+.spell-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.spell-card:hover {
+    background-color: var(--card-background-hover);
+}
+
+.spell-card h3 {
+    color: var(--header-color);
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.spell-card p {
+    color: var(--font-color);
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}

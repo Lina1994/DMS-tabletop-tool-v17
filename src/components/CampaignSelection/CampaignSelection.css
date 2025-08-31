@@ -1,0 +1,92 @@
+.campaign-selection-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.master-help-image {
+    max-width: 250px; /* Adjust as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.campaign-selection-container h1 {
+    margin-bottom: 30px;
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
+.campaign-list-container {
+    width: 100%;
+    max-width: 400px;
+    max-height: 300px; /* Limit height for scroll if many campaigns */
+    overflow-y: auto;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: var(--input-background-color);
+}
+
+.campaign-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.campaign-list-item {
+    padding: 12px 15px;
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    color: var(--input-text-color);
+}
+
+.campaign-list-item:last-child {
+    border-bottom: none;
+}
+
+.campaign-list-item:hover {
+    background-color: var(--hover-background-color);
+}
+
+.new-campaign-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.new-campaign-option p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: var(--text-color-light);
+}
+
+.add-new-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    background-color: var(--secondary-color);
+    color: var(--secondary-text-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.add-new-button:hover {
+    background-color: var(--secondary-color-dark);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,145 @@
+.character-card {
+  background-color: var(--card-background-color); /* Use theme variable */
+  border: 2px solid var(--border-color); /* Use theme variable */
+  border-radius: 8px; /* Keep rounded corners */
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s ease-in-out;
+  color: var(--text-color-light); /* Use theme variable */
+}
+
+.character-card:hover {
+  transform: translateY(-3px); /* Subtle lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.character-card-image-container {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid var(--border-color); /* Use theme variable */
+  background-color: var(--input-background-color); /* Use theme variable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.character-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.character-card-image-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-dark); /* Use theme variable */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color-light); /* Use theme variable */
+  font-size: 0.8em;
+  text-align: center;
+  padding: 5px;
+}
+
+.character-card-info {
+  flex-grow: 1;
+}
+
+.character-card-info h3 {
+  margin: 0 0 5px 0;
+  color: var(--primary-color); /* Use theme variable */
+  font-size: 1.2em;
+  text-shadow: none; /* Remove text shadow */
+  display: flex; /* Enable flexbox for name and tag */
+  align-items: center; /* Align items vertically */
+  gap: 8px; /* Space between name and tag */
+}
+
+.character-card-info p {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--text-color-light); /* Use theme variable */
+}
+
+.character-card-info strong {
+  color: var(--text-color-light); /* Use theme variable */
+}
+
+/* Styles for PC/NPC tag */
+.character-type-tag {
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 4px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.pc-tag {
+  background-color: #28a745; /* Green for PC */
+}
+
+.npc-tag {
+  background-color: #dc3545; /* Red for NPC */
+}
+
+
+.character-card-actions {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 5px;
+}
+
+.character-card-actions button {
+  padding: 8px 12px; /* Revert to original padding */
+  border: none; /* Remove explicit border, rely on background */
+  border-radius: 5px; /* Keep rounded corners */
+  cursor: pointer;
+  font-size: 0.85em; /* Revert to original font size */
+  transition: background-color 0.3s ease;
+  color: white;
+  text-shadow: none; /* Remove text shadow */
+}
+
+.character-card-actions .view-btn {
+  background-color: var(--primary-color); /* Use theme variable */
+}
+
+.character-card-actions .view-btn:hover {
+  background-color: var(--primary-color-dark); /* Use theme variable */
+}
+
+.character-card-actions .edit-btn {
+  background-color: var(--secondary-color); /* Use theme variable */
+  color: white; /* Ensure text is white */
+}
+
+.character-card-actions .edit-btn:hover {
+  background-color: var(--secondary-color-dark); /* Use theme variable */
+}
+
+.character-card-actions .delete-btn {
+  background-color: var(--danger-color); /* Use theme variable */
+}
+
+.character-card-actions .delete-btn:hover {
+  background-color: var(--danger-color-dark); /* Use theme variable */
+}
+
+.levelup-indicator {
+  background-color: #ffc107;
+  color: #000;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.7em;
+  margin-left: 10px;
+}

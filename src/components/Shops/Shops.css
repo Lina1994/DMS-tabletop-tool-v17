@@ -1,0 +1,53 @@
+.shops-container {
+  padding: 20px;
+}
+
+.shops-controls {
+  margin-bottom: 20px;
+}
+
+.category-section {
+  margin-bottom: 20px;
+}
+
+.category-controls {
+  margin-bottom: 10px;
+}
+
+.category-controls button {
+  margin-right: 10px;
+}
+
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.item-table th, .item-table td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+
+.item-table th {
+  background-color: var(--table-header-bg-color);
+}
+
+.item-table button {
+  margin-right: 5px;
+}
+
+.add-item-btn {
+  margin-top: 15px;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}

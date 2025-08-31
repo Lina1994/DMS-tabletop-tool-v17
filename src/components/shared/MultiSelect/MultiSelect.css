@@ -1,0 +1,83 @@
+/* src/components/shared/MultiSelect/MultiSelect.css */
+
+.multi-select-container {
+  position: relative;
+  width: 100%;
+}
+
+.multi-select-input-container {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  padding: 5px;
+  background-color: var(--input-background-color);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  cursor: text;
+}
+
+.selected-item-badge {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.selected-item-badge button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  margin-left: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+
+.multi-select-input {
+  flex-grow: 1;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  padding: 5px;
+  min-width: 100px;
+}
+
+.multi-select-input:focus {
+  outline: none;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background-color: var(--background-color-dark);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1001;
+}
+
+.dropdown-list-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.dropdown-list-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-list-item:hover {
+  background-color: var(--sidebar-hover-bg-color);
+}
+
+.dropdown-list-item.selected {
+    background-color: var(--sidebar-active-bg-color);
+}

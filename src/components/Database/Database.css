@@ -1,0 +1,110 @@
+.database-container {
+  padding: 20px;
+}
+
+.database-header {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  margin-bottom: 20px;
+}
+
+.database-header h2 {
+  margin: 0; 
+}
+
+.database-nav-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.database-nav-horizontal a {
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: var(--secondary-bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.database-nav-horizontal a:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.database-nav-horizontal a.active {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+}
+
+.sidebar-configuration {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--secondary-bg-color);
+}
+
+.sidebar-configuration h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.sidebar-item-toggle {
+  margin-bottom: 10px;
+}
+
+.sidebar-item-toggle label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.sidebar-item-toggle input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-color);
+}
+
+.edit-sidebar-button {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 15px; 
+}
+
+.edit-sidebar-button:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.theme-toggle-button {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--hover-bg-color);
+}
+
+.theme-toggle-button svg {
+  width: 24px;
+  height: 24px;
+}

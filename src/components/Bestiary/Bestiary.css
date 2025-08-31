@@ -1,0 +1,105 @@
+.bestiary-container {
+  padding: 20px;
+  color: var(--text-color);
+}
+
+.bestiary-container h2 {
+  color: var(--header-color);
+  margin-bottom: 20px;
+}
+
+.bestiary-controls {
+  display: flex;
+  gap: 10px; /* Space between button and search input */
+  margin-bottom: 20px; /* Space below controls */
+  align-items: center; /* Align items vertically */
+}
+
+.monster-search-input {
+  flex-grow: 1; /* Allow input to take available space */
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+}
+
+.toggle-filters-button {
+  background-color: var(--accent-color);
+  color: var(--accent-text-color);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  white-space: nowrap; /* Prevent text from wrapping */
+}
+
+.toggle-filters-button:hover {
+  background-color: var(--accent-color-dark);
+}
+
+.bestiary-filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust minmax as needed */
+  gap: 15px; /* Space between filter groups */
+  margin-bottom: 20px; /* Space below filters */
+  padding: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--background-color-light);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-group label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-color-dark);
+  font-size: 0.9em;
+}
+
+.filter-group input[type="text"],
+.filter-group select { /* Added select here */
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 0.9em;
+  width: 100%; /* Ensure select takes full width */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+}
+
+.monster-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Wider columns like map list */
+  gap: 20px; /* Space between monster cards */
+}
+
+.monster-list-item {
+  cursor: pointer; /* Indicate interactivity */
+}
+
+/* Media queries for responsiveness */
+@media (min-width: 768px) {
+  .monster-list {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .monster-list {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  }
+}
+
+@media (min-width: 1200px) {
+  .monster-list {
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr)); /* Double width for large screens */
+  }
+}

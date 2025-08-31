@@ -1,0 +1,100 @@
+
+/* src/components/Encounters/DifficultyInfoModal.css */
+
+.difficulty-info-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.difficulty-info-modal-content {
+    background-color: #2c2c2c;
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    color: #e0e0e0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.difficulty-info-modal-content h2 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.8em;
+}
+
+.difficulty-info-modal-content h3 {
+    color: #66bb6a;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
+
+.difficulty-info-modal-content p,
+.difficulty-info-modal-content ul {
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+.difficulty-info-modal-content ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.difficulty-info-modal-content ul li {
+    margin-bottom: 8px;
+}
+
+.difficulty-info-modal-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.difficulty-info-modal-content th,
+.difficulty-info-modal-content td {
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: left;
+}
+
+.difficulty-info-modal-content th {
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+.difficulty-info-modal-content td {
+    background-color: #222;
+}
+
+.difficulty-info-modal-content .close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.difficulty-info-modal-content .close-button:hover {
+    color: #ff6b6b;
+}
+
+.difficulty-info-modal-content strong {
+    color: #81c784;
+}

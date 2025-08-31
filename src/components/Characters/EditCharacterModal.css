@@ -1,0 +1,7 @@
+/* Re-use styles from AddCharacterModal.css as they are largely the same */
+@import './AddCharacterModal.css';
+
+/* Example of a specific override if needed */
+.modal-content h2 {
+  color: var(--secondary-color); /* Example: change title color for edit modal */
+}

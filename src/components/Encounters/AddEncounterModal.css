@@ -1,0 +1,187 @@
+/* src/components/Encounters/AddEncounterModal.css */
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #2c2c2c;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #eee !important; /* Ensure label text is visible */
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background-color: #3d3d3d;
+    color: #eee;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.monster-search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.monster-search-input {
+    flex-grow: 1;
+}
+
+.toggle-filters-button {
+    padding: 8px 12px;
+    background-color: #007bff; /* Blue color for the button */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+.toggle-filters-button:hover {
+    background-color: #0056b3;
+}
+
+.bestiary-filters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #333 !important; /* Slightly different background for filters section */
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.monster-list-container,
+.selected-monsters-container {
+    margin-top: 20px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: #3d3d3d;
+}
+
+.monster-list-container h3,
+.selected-monsters-container h3 {
+    margin-top: 0;
+    color: #eee;
+}
+
+.available-monsters-list,
+.selected-monsters-list {
+    list-style: none;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #444;
+    border-radius: 4px;
+}
+
+.monster-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #444;
+}
+
+.monster-list-item:last-child {
+    border-bottom: none;
+}
+
+.monster-list-item span {
+    color: #eee;
+}
+
+.monster-list-item button {
+    padding: 5px 10px;
+    background-color: #28a745; /* Green for Add */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.monster-list-item button:hover {
+    background-color: #218838;
+}
+
+.selected-monsters-list .monster-list-item button {
+    background-color: #dc3545; /* Red for Remove */
+}
+
+.selected-monsters-list .monster-list-item button:hover {
+    background-color: #c82333;
+}
+
+.difficulty-display {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #3d3d3d;
+    color: #eee;
+    text-align: center;
+}
+
+.difficulty-display strong {
+    color: #4CAF50; /* Green color for emphasis */
+}
+
+.difficulty-formula {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #3d3d3d;
+    color: #eee;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+.difficulty-formula p {
+    margin: 0;
+}

@@ -1,0 +1,288 @@
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--background-color-dark); /* Changed to darker background */
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin: 20px;
+}
+
+.calendar-container h2 {
+    color: var(--text-color-light); /* Changed to lighter text for darker background */
+    margin-bottom: 20px;
+}
+
+.edit-calendar-button,
+.toggle-calendar-view-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    margin-left: 10px; /* Add some space between buttons */
+}
+
+.edit-calendar-button:hover,
+.toggle-calendar-view-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.calendar-settings {
+    background-color: var(--background-color-dark);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: var(--box-shadow-inset);
+}
+
+.calendar-settings h3 {
+    color: var(--text-color-light);
+    margin-bottom: 15px;
+}
+
+.calendar-settings label {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-color-light);
+    font-weight: bold;
+}
+
+.calendar-settings input[type="number"],
+.calendar-settings input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+}
+
+.setting-group {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
+
+.setting-group h4 {
+    color: var(--text-color-light);
+    margin-bottom: 10px;
+}
+
+/* New grid layout for setting inputs */
+.setting-input-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust minmax as needed */
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.setting-input-grid label {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 0; /* Override default label margin */
+}
+
+.setting-input-grid input {
+    width: 100%; /* Make inputs fill their grid cell */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.calendar-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    --min-month-width: 300px; /* Default fallback */
+}
+
+.calendar-month {
+    background-color: var(--secondary-color-light);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    padding: 15px;
+    min-width: var(--min-month-width);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-month h3 {
+    color: var(--text-color-dark);
+    margin-bottom: 10px;
+}
+
+.calendar-weekdays,
+.calendar-days-grid {
+    display: grid;
+    gap: 5px;
+    width: 100%;
+}
+
+.weekday-name {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.calendar-day {
+    background-color: var(--background-color-light);
+    color: var(--text-color-dark);
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40px; /* Ensure consistent height */
+}
+
+.calendar-day:hover {
+    background-color: var(--primary-color-light);
+    transform: translateY(-2px);
+}
+
+.calendar-day.empty {
+    background-color: transparent;
+    cursor: default;
+    box-shadow: none;
+}
+
+.calendar-day.empty:hover {
+    background-color: transparent;
+    transform: none;
+}
+
+.calendar-day.selected {
+    background-color: var(--accent-color);
+    color: white;
+    box-shadow: var(--box-shadow-accent);
+}
+
+/* New style for days with diary entries */
+.calendar-day.has-entry {
+    background-color: var(--secondary-color-dark); /* A darker shade */
+    color: white;
+    border: 2px solid var(--primary-color);
+}
+
+.calendar-day.has-entry:hover {
+    background-color: var(--secondary-color); /* Slightly lighter on hover */
+}
+
+.calendar-day.selected.has-entry {
+    background-color: var(--accent-color-dark); /* Darker accent for selected and has-entry */
+    border: 2px solid white;
+}
+
+.diary-section,
+.master-notes-section {
+    background-color: var(--background-color-dark);
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.diary-header h3,
+.master-notes-section h3 {
+    color: var(--text-color-light);
+    text-align: center;
+    flex-grow: 1;
+}
+
+.nav-button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.diary-section textarea,
+.master-notes-section textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--input-background-color);
+    color: var(--input-text-color);
+    font-family: inherit;
+    font-size: 1em;
+    min-height: 150px;
+    resize: vertical;
+}
+
+.diary-actions,
+.master-notes-section button {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.diary-actions button,
+.master-notes-section button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.diary-actions button:hover,
+.master-notes-section button:hover {
+    background-color: var(--primary-color-dark);
+}
+
+.diary-actions button.delete-button {
+    background-color: var(--error-color);
+}
+
+.diary-actions button.delete-button:hover {
+    background-color: var(--error-color-dark);
+}
+
+.error {
+    color: var(--error-color);
+    margin-top: 10px;
+}

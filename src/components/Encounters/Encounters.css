@@ -1,0 +1,44 @@
+/* src/components/Encounters/Encounters.css */
+
+.encounters-container {
+    padding: 20px;
+}
+
+.encounters-controls {
+    margin-bottom: 20px;
+    display: flex; /* Added to align buttons */
+    gap: 10px; /* Added space between buttons */
+}
+
+.add-encounter-btn,
+.info-btn,
+.combat-btn { /* Added .combat-btn here */
+    padding: 10px 15px;
+    font-size: 1em;
+    background-color: #4a4a4a;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #eee;
+    cursor: pointer;
+}
+
+.add-encounter-btn:hover,
+.info-btn:hover,
+.combat-btn:hover {
+    background-color: #5a5a5a;
+}
+
+.encounter-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.encounter-search-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #eee;
+}

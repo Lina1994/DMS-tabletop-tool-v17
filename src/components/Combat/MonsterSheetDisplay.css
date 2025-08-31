@@ -1,0 +1,76 @@
+.monster-sheet-display {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 10px;
+  color: #f0f0f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  overflow-y: auto; /* Enable scrolling for long content */
+  max-height: 70vh; /* Limit height to prevent overflow */
+}
+
+.monster-sheet-display h3 {
+  color: #e0e0e0;
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #555;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.monster-sheet-display h4 {
+  color: #c0c0c0;
+  margin-top: 15px;
+  margin-bottom: 8px;
+  border-bottom: 1px dashed #666;
+  padding-bottom: 3px;
+}
+
+.monster-sheet-display p {
+  margin-bottom: 5px;
+  font-size: 0.9em;
+  line-height: 1.4;
+}
+
+.monster-sheet-display strong {
+  color: #a0a0a0;
+}
+
+.monster-image-container {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.monster-image-sheet {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.monster-details-grid-display {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.detail-group-display {
+  background-color: #333;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+}
+
+.full-width-display {
+  grid-column: 1 / -1; /* Spans all columns */
+}
+
+.pre-formatted-text {
+  white-space: pre-wrap; /* Preserves whitespace and wraps text */
+  font-family: monospace; /* Optional: for a more code-like appearance */
+  font-size: 0.85em;
+  background-color: #222;
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #444;
+}

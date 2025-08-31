@@ -1,0 +1,42 @@
+/* src/components/Encounters/EncounterCard/EncounterCard.css */
+
+.encounter-card {
+    background-color: #2c2c2c;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.encounter-card:hover {
+    background-color: #353535;
+}
+
+.encounter-info h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.encounter-details {
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.encounter-controls button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #3d3d3d;
+    color: #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.encounter-controls button:hover {
+    background-color: #555;
+}
